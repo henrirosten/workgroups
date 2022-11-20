@@ -7,22 +7,11 @@ matrix:
   include:
 
     # Sub-dir: development-process/stable-maintenance/regression-analysis/
-    # Python version: 3.6
+    # Python version: 3.8
     - language: python
+      dist: focal
       python:
-        - "3.6"
-      before_install:
-        - cd development-process/stable-maintenance/regression-analysis/
-      install:
-        - make install-requirements
-      script:
-        - make pre-push
-
-    # Sub-dir: development-process/stable-maintenance/regression-analysis/
-    # Python version: 3.7
-    - language: python
-      python:
-        - "3.7"
+        - "3.8"
       before_install:
         - cd development-process/stable-maintenance/regression-analysis/
       install:
@@ -32,9 +21,9 @@ matrix:
         - make pre-push
 
     # Sub-dir safety-architecture/tools/callgraph-tool
-    # Python version: 3.6
+    # Python version: 3.8
     - language: python
-      dist: bionic
+      dist: focal
       addons:
           apt:
               packages:
@@ -48,32 +37,7 @@ matrix:
                   - clang-format-10
                   - graphviz
       python:
-        - "3.6"
-      before_install:
-        - cd safety-architecture/tools/callgraph-tool
-      install:
-        - make install-requirements
-      script:
-        - make pre-push
-
-    # Sub-dir safety-architecture/tools/callgraph-tool
-    # Python version: 3.7
-    - language: python
-      dist: bionic
-      addons:
-          apt:
-              packages:
-                  - build-essential
-                  - cmake
-                  - libstdc++-8-dev
-                  - clang-10
-                  - python3-clang-10
-                  - llvm-10
-                  - llvm-10-dev
-                  - clang-format-10
-                  - graphviz
-      python:
-        - "3.7"
+        - "3.8"
       before_install:
         - cd safety-architecture/tools/callgraph-tool
       install:
